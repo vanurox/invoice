@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Signature</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button full color="danger" (click)="drawCancel()">Cancel</button>
+        </ion-col>
+        <ion-col col-4>
+            <button ion-button full color="ligh" (click)="drawClear()">Clear</button>
+          </ion-col>
+          <ion-col col-4>
+              <button ion-button full color="secondary" (click)="drawComplete()">Save</button>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12>
+              <img src="http://oscuz.com/user-manage/uploads/signature/sig_{{ userdata.id }}_img.png" alt="Previous Signature">
+            </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

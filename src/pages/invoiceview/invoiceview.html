@@ -1,0 +1,30 @@
+<!--
+  Generated template for the InvoiceviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>View Invoice</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row><ion-col col-6>Name of the company:</ion-col><ion-col col-6>{{ invoicedetail.company_name }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Mailing address:</ion-col><ion-col col-6>{{ invoicedetail.address }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Invoice Date:</ion-col><ion-col col-6>{{ invoicedetail.invoice_date }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Pick up:</ion-col><ion-col col-6>{{ invoicedetail.pick_up }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Drop location:</ion-col><ion-col col-6>{{ invoicedetail.drop_location }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Line Haul amount:</ion-col><ion-col col-6>{{ invoicedetail.amount }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>line Items:</ion-col><ion-col col-6>{{ invoicedetail.line_item }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Total amount on Invoice:</ion-col><ion-col col-6>{{ invoicedetail.total_amount  }}</ion-col></ion-row>
+    <ion-row><ion-col col-6>Notes:</ion-col><ion-col col-6>{{ invoicedetail.notes }}</ion-col></ion-row>
+  </ion-grid>
+</ion-content>
+
+

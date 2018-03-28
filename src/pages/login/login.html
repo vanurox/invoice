@@ -1,0 +1,30 @@
+<ion-content>
+<img alt="logo" src="assets/imgs/logo_header.png" >
+<form [formGroup]="formgroup" #f="ngForm" (ngSubmit)="getMeIn(f)">
+<ion-list>
+  <ion-item>
+    <ion-label><ion-icon name="ios-person-outline"></ion-icon> </ion-label>
+    <ion-input type="text" formControlName="username" placeholder="Email"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="username.hasError('required') && username.touched">
+    <p>* Email is required</p>
+  </ion-item>
+  <ion-item *ngIf="username.hasError('email') && username.touched">
+    <p>* Email must be valid</p>
+  </ion-item>
+  <ion-item>
+    <ion-label> <ion-icon name="ios-key-outline"></ion-icon> </ion-label>
+    <ion-input type="password"  formControlName="password" placeholder="Password"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="password.hasError('required') && password.touched">
+    <p>* Password is required</p>
+  </ion-item>
+  <button class="forgot-btn">Forgot Password?</button>
+</ion-list>
+
+<div padding>
+  <button ion-button class="register-btn" type="submit" [disabled]="!f.valid" >Login</button>
+  <button ion-button class="register-btn right" type="button" (click)="onGoToRegiter('Register')">Resgiter</button>
+</div>
+</form>
+</ion-content>           

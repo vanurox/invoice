@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Invoice List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of userinvoices" [navPush]="invoiceviewPage" [navParams]="item">
+      {{item.company_name}}
+      <div class="item-note" item-end>
+        {{item.invoice_date}}
+      </div>
+    </button>
+  </ion-list>
+</ion-content>
