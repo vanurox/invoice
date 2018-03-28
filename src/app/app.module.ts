@@ -23,6 +23,10 @@ import { AuthserviceProvider } from '../providers/authservice/authservice';
 import { InvoiceviewPage } from '../pages/invoiceview/invoiceview';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 @NgModule({
   declarations: [
@@ -70,8 +74,13 @@ import { Camera } from '@ionic-native/camera';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthserviceProvider,
     ImagePicker,
-		Crop,
-		Camera
+	Crop,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera,
+    Transfer,
+    FilePath,
   ]
 })
 export class AppModule {}

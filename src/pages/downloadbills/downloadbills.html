@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!-- <ion-content padding>
   <ion-row>
     <ion-col col-6 *ngFor="let photo of photos; let id=index">
       <ion-card>
@@ -23,5 +23,37 @@
 <ion-footer>
   <ion-toolbar>
     <button ion-button block (click)="presentActionSheet()">Select Pictures</button>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-content class="card-background-page">
+    
+    <ion-row>
+      <ion-col *ngFor="let img of images; let i = index" [hidden]="images.length == null" col-6>
+        <ion-card>
+          <img  src="{{pathForImage(img)}}" >
+           <ion-row>  
+           <ion-col  style="margin-top:8%;"> 
+            <ion-icon tappable (click)="deleteImage(i)" ios="ios-trash" md="md-trash" color="danger" >&nbsp;&nbsp;Delete</ion-icon>            
+         </ion-col> 
+          </ion-row>
+        </ion-card >
+      </ion-col>
+    </ion-row>
+</ion-content>
+ 
+<ion-footer >
+  <ion-toolbar>
+    <ion-buttons>
+     
+      <button ion-button   (click)="presentActionSheet()">
+        <ion-icon name="camera">&nbsp; Select Image</ion-icon>
+      </button>
+      
+      <button ion-button [disabled]="images.length == 0" (click)="uploadImage()" >
+        <ion-icon name="cloud-upload">&nbsp; Upload</ion-icon> 
+      </button>
+
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
